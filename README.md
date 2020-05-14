@@ -1,3 +1,38 @@
+# Beacon Superset
+
+
+This is modified version of Apache Superset cloned from https://github.com/apache/incubator-superset branch **0.30** with many modifications (as listed below).
+
+Local install
+=========
+
+This version runs of Superset on python 3.6, you also need to install (using pip) all
+packages as described in requirements.txt file
+
+Edit env.sh:
+
+* edit PYTHONPATH to add current superset directory
+* edit SUPERSET_HOME to location where superset db will be created
+* add location SUPERSET_CONFIG_PATH where custom Superset config override will be
+
+First time install
+=========
+
+After required packages are installed and environment is setup, you need to source
+env.sh and run init.sh, that should create your initial superset db with examples.
+
+Install JavaScript packages
+=========
+
+Change to superset/assets directory and execute **yarn** and follow up by **yarn build**.
+You need to have yarn, node and webpack installed.
+
+
+# Run Superset
+
+Navigate to root Superset directory and execute: run.sh.
+
+
 Superset
 =========
 
@@ -26,23 +61,23 @@ Screenshots & Gifs
 
 **View Dashboards**
 
-<kbd><img title="View Dashboards" src="https://raw.githubusercontent.com/apache/incubator-superset/master/superset/assets/images/screenshots/bank_dash.png"></kbd><br/>
+<kbd><img title="View Dashboards" src="https://raw.githubusercontent.com/apache/incubator-superset/master/superset-frontend/images/screenshots/bank_dash.png"></kbd><br/>
 
 **Slice & dice your data**
 
-<kbd><img title="Slice & dice your data" src="https://raw.githubusercontent.com/apache/incubator-superset/master/superset/assets/images/screenshots/explore.png"></kbd><br/>
+<kbd><img title="Slice & dice your data" src="https://raw.githubusercontent.com/apache/incubator-superset/master/superset-frontend/images/screenshots/explore.png"></kbd><br/>
 
 **Query and visualize your data with SQL Lab**
 
-<kbd><img title="SQL Lab" src="https://raw.githubusercontent.com/apache/incubator-superset/master/superset/assets/images/screenshots/sqllab.png"></kbd><br/>
+<kbd><img title="SQL Lab" src="https://raw.githubusercontent.com/apache/incubator-superset/master/superset-frontend/images/screenshots/sqllab.png"></kbd><br/>
 
 **Visualize geospatial data with deck.gl**
 
-<kbd><img title="Geospatial" src="https://raw.githubusercontent.com/apache/incubator-superset/master/superset/assets/images/screenshots/deckgl_dash.png"></kbd><br/>
+<kbd><img title="Geospatial" src="https://raw.githubusercontent.com/apache/incubator-superset/master/superset-frontend/images/screenshots/deckgl_dash.png"></kbd><br/>
 
 **Choose from a wide array of visualizations**
 
-<kbd><img title="Visualizations" src="https://raw.githubusercontent.com/apache/incubator-superset/master/superset/assets/images/screenshots/visualizations.png"></kbd><br/>
+<kbd><img title="Visualizations" src="https://raw.githubusercontent.com/apache/incubator-superset/master/superset-frontend/images/screenshots/visualizations.png"></kbd><br/>
 
 Apache Superset
 ---------------
