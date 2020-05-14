@@ -1,7 +1,7 @@
 # Beacon Superset
 
 
-This is modified version of Apache Superset cloned from https://github.com/apache/incubator-superset branch **0.30** with many modifications (as listed below).
+This is modified version of Apache Superset cloned from https://github.com/apache/incubator-superset branch **0.30** with many modifications as listed in [BEACON_CHANGES.md](BEACON_CHANGES.md).
 
 Local install
 =========
@@ -14,6 +14,7 @@ Edit env.sh:
 * edit PYTHONPATH to add current superset directory
 * edit SUPERSET_HOME to location where superset db will be created
 * add location SUPERSET_CONFIG_PATH where custom Superset config override will be
+  (sample config file you can find in [local_config/custom_superset_config.py](local_config/custom_superset_config.py))
 
 First time install
 =========
@@ -25,12 +26,15 @@ Install JavaScript packages
 =========
 
 Change to superset/assets directory and execute **yarn** and follow up by **yarn build**.
-You need to have yarn, node and webpack installed.
-
+You need to have yarn, node and webpack installed, more in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 # Run Superset
 
-Navigate to root Superset directory and execute: run.sh.
+Navigate to root Superset directory and execute: run.sh. You also may need **Redis** server run if you enable caching in Superset configuration.
+
+# Developing
+
+Please refer to [CONTRIBUTING.md](CONTRIBUTING.md) for more detailed information how to configure and setup Superset for development.
 
 
 Superset

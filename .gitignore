@@ -1,6 +1,7 @@
 *.bak
 *.db
 *.pyc
+*.pyx
 *.sqllite
 *.swp
 .cache-loader
@@ -44,4 +45,3 @@ yarn-error.log
 *.iml
 venv
 @eaDir/
-
