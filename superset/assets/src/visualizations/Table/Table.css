@@ -1,0 +1,45 @@
+.slice_container.table table.table {
+  margin: 0px !important;
+  background: transparent;
+  background-color: white;
+}
+
+.table-condensed>thead>tr>th, .table-condensed>tbody>tr>th, .table-condensed>tfoot>tr>th, .table-condensed>thead>tr>td, .table-condensed>tbody>tr>td, .table-condensed>tfoot>tr>td {
+    padding: 3px 5px;
+}
+
+table.table thead th.sorting:after, table.table thead th.sorting_asc:after, table.table thead th.sorting_desc:after {
+  top: 0px;
+}
+
+.like-pre {
+  white-space: pre-wrap;
+  text-align: left;
+}
+
+.like-pre-right {
+  white-space: pre-wrap;
+  text-align: right;
+}
+
+.like-pre-center {
+  white-space: pre-wrap;
+  text-align: center;
+}
+
+input.form-control.input-sm {
+    height: 24px;
+}
+
+select.input-sm {
+    height: 24px;
+    line-height: 24px;
+}
+
+.pagination > li > a, .pagination > li > span {
+    padding: 5px 10px;
+}
+
+.widget.table thead tr {
+  height: 25px;
+}

@@ -1,0 +1,8 @@
+.widget.pivot_table tr > th,
+.widget.pivot_table tr > td {
+  padding: 1px 5px;
+}
+
+input.form-control.input-sm {
+    height: 24px;
+}

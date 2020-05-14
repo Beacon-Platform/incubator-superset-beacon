@@ -1,0 +1,18 @@
+{% extends "superset/base.html" %}
+
+{% block body %}
+<div class="container invalid login">
+  {% include 'superset/flash_wrapper.html' %}
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">
+        <div class="row">
+          <div class="col-md-12">
+              Please contact your local Administrator for Superset access.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

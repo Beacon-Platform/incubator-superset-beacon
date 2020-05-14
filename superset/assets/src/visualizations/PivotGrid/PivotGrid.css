@@ -1,0 +1,10 @@
+//.pvtTotal, .pvtTotalLabel, .pvtGrandTotal {display: none}
+
+.pvtTable thead tr th,
+.pvtTable tbody tr th {
+    padding: 3px;
+}
+
+.pvtTable tbody tr td {
+    padding: 3px;
+}
