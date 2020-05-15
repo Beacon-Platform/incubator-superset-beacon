@@ -11,9 +11,11 @@ export default function transformProps(chartProps) {
     verboseMap,
   } = datasource;
 
-  window.console.log('datasource ', datasource);
-  window.console.log('form data ', formData);
-  window.console.log('payload: ', payload);
+  if (windows._debug_) {
+      window.console.log('datasource ', datasource);
+      window.console.log('form data ', formData);
+      window.console.log('payload: ', payload);
+  }
 
   return {
     height,

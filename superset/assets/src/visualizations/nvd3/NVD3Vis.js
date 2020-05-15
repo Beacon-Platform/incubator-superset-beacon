@@ -236,8 +236,9 @@ function nvd3Vis(element, props) {
   container.innerHTML = '';
   const activeAnnotationLayers = annotationLayers.filter(layer => layer.show);
 
-  // debug
-  //window.console.log('Annotation Layers: ', annotationLayers);
+  if (window._debug_) {
+    window.console.log('Annotation Layers: ', annotationLayers);
+  }
 
   let chart;
   let width = maxWidth;
@@ -273,9 +274,10 @@ function nvd3Vis(element, props) {
     );
     const numberFormatter = _getNumberFormatter(numberFormat);
 
-    // debug
-    //window.console.log('Viz type: ', vizType);
-    //window.console.log('data: ', data);
+    if (window._debug_) {
+        window.console.log('Viz type: ', vizType);
+        window.console.log('data: ', data);
+    }
 
     switch (vizType) {
       case 'line':
@@ -551,8 +553,9 @@ function nvd3Vis(element, props) {
     chart.height(height);
     container.style.height = `${height}px`;
 
-    // debug
-    //window.console.log('Width and height ', width, height);
+    if (window._debug_) {
+        window.console.log('Width and height ', width, height);
+    }
 
     svg
       .datum(data)
@@ -877,7 +880,9 @@ function nvd3Vis(element, props) {
             ));
 
             if (records.length) {
-              window.console.log('Interval annotaions ', e);
+              if (window._debug_) {
+                window.console.log('Interval annotations ', e);
+              }
               annotations.selectAll('rect')
                 .data(records)
                 .enter()

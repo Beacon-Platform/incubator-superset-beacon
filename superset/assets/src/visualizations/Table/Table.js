@@ -111,10 +111,12 @@ function TableVis(element, props) {
   const alignment = numberAlignment || 'Right';
   const align_map = {'Right': 'text-right', 'Left': 'text-left', 'Center': 'text-center'};
 
-  //window.console.log('Properties: ', alignment, colorBands, formatNum, numberFormat, table_format());
-  //window.console.log('Columns ', columns, ' metrics ', metrics);
-  //window.console.log('time_columns_names ', time_columns_names, '; time_columns_labels ', time_columns_labels);
-  //window.console.log('unformatted columns ', unformattedColumns);
+  if (window._debug_) {
+      window.console.log('Properties: ', alignment, colorBands, formatNum, numberFormat, table_format());
+      window.console.log('Columns ', columns, ' metrics ', metrics);
+      window.console.log('time_columns_names ', time_columns_names, '; time_columns_labels ', time_columns_labels);
+      window.console.log('unformatted columns ', unformattedColumns);
+  };
 
   const metrics = (rawMetrics || []).map(m => m.label || m)
     // Add percent metrics
@@ -170,8 +172,9 @@ function TableVis(element, props) {
       const isMetric = metrics.indexOf(key) >= 0;
       const isUnformattedColumn = unformattedColumns.indexOf(key) >= 0;
 
-      //debug
-      //window.console.log('Val: ', isUnformattedColumn, key, val, isMetric, isNumeric(val), isBigNumber(val), is_number(val), typeof(val), tableTimestampFormat);
+      if (window._debug_) {
+        window.console.log('Val: ', isUnformattedColumn, key, val, isMetric, isNumeric(val), isBigNumber(val), is_number(val), typeof(val), tableTimestampFormat);
+      }
 
       if (key === '__timestamp') {
         html = tsFormatter(val);

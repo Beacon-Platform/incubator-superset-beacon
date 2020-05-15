@@ -26,16 +26,20 @@ export default function transformProps(chartProps) {
   const { columnFormats , verboseMap } = datasource;
   const { records, columns } = payload.data;
 
-  //window.console.log('datasource ', datasource);
-  //window.console.log('columns ', columns);
-  //window.console.log('unformatted columns ', unformattedColumns);
+  if (window._debug_) {
+    window.console.log('datasource ', datasource);
+    window.console.log('columns ', columns);
+    window.console.log('unformatted columns ', unformattedColumns);
+  }
 
   const time_columns = datasource.columns.filter(c => c.is_dttm);
   const time_columns_names = time_columns.map(c => c.column_name);
   const time_columns_labels = time_columns.map(c => c.verbose_name).filter(c => c);
 
-  //window.console.log('time columns names ', time_columns_names);
-  //window.console.log('time columns labels ', time_columns_labels);
+  if (window._debug_) {
+    window.console.log('time columns names ', time_columns_names);
+    window.console.log('time columns labels ', time_columns_labels);
+  }
 
   const processedColumns = columns.map((key) => {
     let label = verboseMap[key];

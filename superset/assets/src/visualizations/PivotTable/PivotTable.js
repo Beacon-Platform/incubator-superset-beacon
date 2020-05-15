@@ -69,8 +69,10 @@ function PivotTable(element, props) {
       const metric = cols[i];
       const format = columnFormats[metric] || formatNum;
       const tdText = $(this)[0].textContent;
-      // debug
-      //window.console.log('Val: ', tdText);
+
+      if (window._debug_) {
+        window.console.log('Val: ', tdText);
+      }
 
       if (!Number.isNaN(tdText) && tdText !== '') {
         $(this)[0].textContent = _formatNumber(format, tdText);

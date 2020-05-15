@@ -64,8 +64,9 @@ export default function transformProps(chartProps) {
   } = formData;
 
   const rawData = payload.data || [];
-  // debug
-  //window.console.log('Raw data: ', rawData);
+  if (window._debug_) {
+    window.console.log('Raw data: ', rawData);
+  }
 
   const data = Array.isArray(rawData)
     ? rawData.map(row => ({
@@ -93,7 +94,9 @@ export default function transformProps(chartProps) {
       }
   }
 
-  //window.console.log('Parsed data: ', data);
+  if (window._debug_) {
+    window.console.log('Parsed data: ', data);
+  }
 
   return {
     width,

@@ -52,8 +52,10 @@ function PivotGrid(element, props) {
     ? columns.map(col => col[0])
     : columns;
 
-   window.console.log('Pivot ', PivotTableUI);
-   window.console.log('Container ', container, $container);
+   if (window._debug_) {
+     window.console.log('Pivot ', PivotTableUI);
+     window.console.log('Container ', container, $container);
+   }
 }
 
 PivotGrid.displayName = 'PivotGrid';

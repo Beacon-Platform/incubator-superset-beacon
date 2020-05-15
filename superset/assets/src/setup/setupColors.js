@@ -23,9 +23,11 @@ export default function setupColors() {
     });
   });
 
-  //window.console.log('1 sequentialSchemeRegistry: ', sequentialSchemeRegistry);
-  //window.console.log('2 sequentialSchemeRegistry: ', sequentialSchemeRegistry.values());
+  if (window._debug_) {
+    window.console.log('1 sequentialSchemeRegistry: ', sequentialSchemeRegistry);
+    window.console.log('2 sequentialSchemeRegistry: ', sequentialSchemeRegistry.values());
 
-  //const choices = () => sequentialSchemeRegistry.values().map(value => [value.id, value.label]);
-  //window.console.log('choices: ', choices());
+    const choices = () => sequentialSchemeRegistry.values().map(value => [value.id, value.label]);
+    window.console.log('choices: ', choices());
+  };
 }

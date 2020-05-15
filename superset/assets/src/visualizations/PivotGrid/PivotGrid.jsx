@@ -243,15 +243,16 @@ class PivotGrid extends React.Component {
         },
       );
 
-      //window.console.log('Metric ', typeof this.props.metrics[0] === 'string');
-      //window.console.log('Raw Data ', raw_data);
-      //window.console.log('Props ', this.props);
-
-      //window.console.log('Cols ', cols, columns);
-      //window.console.log('Vals ', vals);
-      //window.console.log('This ', this);
-      //window.console.log('TableRenderers ', TableRenderers);
-      //window.console.log('TableRenderers entries ', Object.entries(TableRenderers));
+      if (window._debug_) {
+          window.console.log('Metric ', typeof this.props.metrics[0] === 'string');
+          window.console.log('Raw Data ', raw_data);
+          window.console.log('Props ', this.props);
+          window.console.log('Cols ', cols, columns);
+          window.console.log('Vals ', vals);
+          window.console.log('This ', this);
+          window.console.log('TableRenderers ', TableRenderers);
+          window.console.log('TableRenderers entries ', Object.entries(TableRenderers));
+      }
 
       const pivot_interact = this.props.pivotInteract
       const pivotColormap = this.props.pivotColormap;
