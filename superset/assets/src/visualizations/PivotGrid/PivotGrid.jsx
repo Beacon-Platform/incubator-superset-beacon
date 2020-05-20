@@ -139,7 +139,9 @@ class PivotGrid extends React.Component {
   }
 
   componentDidMount() {
-      window.console.log('componentDidMount');
+      if (window._debug_) {
+        window.console.log('componentDidMount');
+      }
 
       const pivotTotals = this.props.pivotTotals;
 
@@ -173,8 +175,9 @@ class PivotGrid extends React.Component {
   }
 
   componentDidUpdate() {
-      window.console.log('componentDidUpdate');
-
+      if (window._debug_) {
+        window.console.log('componentDidUpdate');
+      }
       const pivotTotals = this.props.pivotTotals;
 
       const node = ReactDOM.findDOMNode(this);
@@ -211,7 +214,9 @@ class PivotGrid extends React.Component {
   }
 
   componentWillUnmount() {
-      window.console.log('componentWillUnmount');
+      if (window._debug_) {
+        window.console.log('componentWillUnmount');
+      }
   }
 
   render() {

@@ -2,23 +2,30 @@
 
 This version of Superset is cloned from Apache Superset version 0.30 (branch 0.30)
 
-Main changes added for Beacon
+Main changes added:
 
-* Automatic login using Beacon credentials
+* Automatic login using cookie stored credentials
 
 * Fixes to Table ungroupped selection
 
-* Fixes to number formatting in Table and PivotTable
+* Fixes to number formatting in Table and PivotTable, speedup rendering of number formatting
 
-* Fix support for MSSQL 
+* Fix support for MSSQL
 
 * Fixes color mapping in Table and PivotTable
 
-* Various css fixes and improvements
+* Various css fixes and improvements, changed global color scheme
 
+* Updated and added many Javascript packages 
 
 * New visualization component **PivotGrid** based on React Plotly PivotTable from [https://github.com/plotly/react-pivottable](https://github.com/plotly/react-pivottable)
 
+    ![Pivot Grid](superset/assets/images/screenshots/Pivot_Grid.png)
+    ![Pivot Grid Interactive](superset/assets/images/screenshots/Pivot_Grid_2.png)
+
+    
+    Code files:
+    
     ```
 	superset/assets/images/viz_thumbnails/pivot_grid.png
 	superset/assets/src/explore/controlPanels/PivotGrid.js

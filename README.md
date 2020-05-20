@@ -1,7 +1,7 @@
 # Beacon Superset
 
 
-This is modified version of Apache Superset cloned from https://github.com/apache/incubator-superset branch **0.30** with many modifications as listed in [BEACON_CHANGES.md](BEACON_CHANGES.md).
+This is modified version of Apache Superset forked from main repo https://github.com/apache/incubator-superset branch **0.30** with many modifications as listed in [BEACON_CHANGES.md](BEACON_CHANGES.md).
 
 Local install
 =========
