@@ -6,31 +6,32 @@ This is modified version of Apache Superset forked from main repo https://github
 Local install
 =========
 
-This version runs of Superset on python 3.6, you also need to install (using pip) all
-packages as described in requirements.txt file
+This version of Superset runs on python 3.6, you need to install (using pip) all
+packages as described in requirements.txt file.
 
-Edit env.sh:
+Edit [env.sh](env.sh):
 
-* edit PYTHONPATH to add current superset directory
-* edit SUPERSET_HOME to location where superset db will be created
-* add location SUPERSET_CONFIG_PATH where custom Superset config override will be
+* edit PYTHONPATH to add current superset root directory to the path
+* edit SUPERSET_HOME to location where superset db will be created, wiht proper read/write permissions
+* edit location SUPERSET_CONFIG_PATH to where custom Superset config override will be
   (sample config file you can find in [local_config/custom_superset_config.py](local_config/custom_superset_config.py))
 
 First time install
 =========
 
 After required packages are installed and environment is setup, you need to source
-env.sh and run init.sh, that should create your initial superset db with examples.
+[env.sh](env.sh) and run [init.sh](init.sh), that should create your initial superset db with examples.
+You can edit this file to customize it.
 
 Install JavaScript packages
 =========
 
 Change to superset/assets directory and execute **yarn** and follow up by **yarn build**.
-You need to have yarn, node and webpack installed, more in [CONTRIBUTING.md](CONTRIBUTING.md).
+You need to have yarn, node and webpack installed, more info in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 # Run Superset
 
-Navigate to root Superset directory and execute: run.sh. You also may need **Redis** server run if you enable caching in Superset configuration.
+Navigate to Superset root directory and execute: [run.sh](run.sh). You also may need **Redis** server run if you enable caching in Superset configuration.
 
 # Developing
 
