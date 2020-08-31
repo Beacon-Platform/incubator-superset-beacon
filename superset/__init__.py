@@ -84,6 +84,7 @@ def get_manifest():
         css_manifest=get_css_manifest_files,
     )
 
+
 # Debug statements
 table_format = conf.get('DEFAULT_TABLE_FORMAT', '.3s')
 print('Default table format: %s' % table_format)
@@ -105,8 +106,10 @@ if conf.get('SILENCE_FAB'):
     logging.getLogger('flask_appbuilder').setLevel(logging.ERROR)
 
 if app.debug:
+    print("Initialize Logging Level: Debug")
     app.logger.setLevel(logging.DEBUG)  # pylint: disable=no-member
 else:
+    print("Initialize Logging Level: Info")
     # In production mode, add log handler to sys.stderr.
     app.logger.addHandler(logging.StreamHandler())  # pylint: disable=no-member
     app.logger.setLevel(logging.INFO)  # pylint: disable=no-member
@@ -220,12 +223,14 @@ class MyIndexView(IndexView):
     def index(self):
         return redirect(app.config.get('URL_PREFIX', '') + '/superset/welcome')
 
+
 custom_sm = app.config.get('CUSTOM_SECURITY_MANAGER') or SupersetSecurityManager
 if not issubclass(custom_sm, SupersetSecurityManager):
     raise Exception(
         """Your CUSTOM_SECURITY_MANAGER must now extend SupersetSecurityManager,
          not FAB's security manager.
          See [4565] in UPDATING.md""")
+
 
 appbuilder = AppBuilder(
     app,
@@ -237,7 +242,6 @@ appbuilder = AppBuilder(
 )
 
 security_manager = appbuilder.sm
-
 results_backend = app.config.get('RESULTS_BACKEND')
 
 # Registering sources

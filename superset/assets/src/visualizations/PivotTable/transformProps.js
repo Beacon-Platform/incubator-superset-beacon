@@ -5,13 +5,14 @@ export default function transformProps(chartProps) {
     numberFormat,
     numberAlignment,
     includeSearch,
+    pivotSortOrder,
   } = formData;
   const {
     columnFormats,
     verboseMap,
   } = datasource;
 
-  if (windows._debug_) {
+  if (window._debug_) {
       window.console.log('datasource ', datasource);
       window.console.log('form data ', formData);
       window.console.log('payload: ', payload);
@@ -26,5 +27,6 @@ export default function transformProps(chartProps) {
     verboseMap,
     numberAlignment,
     includeSearch,
+    pivotSortOrder,
   };
 }

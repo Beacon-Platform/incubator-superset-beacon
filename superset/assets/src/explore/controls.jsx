@@ -461,6 +461,20 @@ export const controls = {
     description: t('Override display pivot total column name'),
   },
 
+  pivot_sort_order: {
+    type: 'SelectControl',
+    renderTrigger: false,
+    label: t('Sort Order'),
+    choices: [
+      ['rows_asc', 'Rows Ascending'],
+      ['rows_desc', 'Rows Descending'],
+      ['values_asc', 'Values Ascending'],
+      ['values_desc', 'Values Descending'],
+    ],
+    default: 'rows_asc',
+    description: t('Sort pivot tables methods. Rows ascending is a default.'),
+  },
+
   dark_mode: {
     type: 'CheckboxControl',
     label: t('Table Dark Mode style'),

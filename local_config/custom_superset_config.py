@@ -1,6 +1,4 @@
 """
-Copyright: Copyright (C) 2019 Beacon Platform Inc. - All Rights Reserved
-Product: Core
 Description: Superset config - custom overrides
 """
 
@@ -63,7 +61,7 @@ VERBOSE_DEBUG = True
 ADMIN_LOGIN = True
 
 # Guest login domains
-GUEST_DOMAINS = ['beacon.io']
+GUEST_DOMAINS = ['']
 
 # Guest login user
 GUEST_USER = 'guest'

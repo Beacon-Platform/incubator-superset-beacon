@@ -646,7 +646,9 @@ class TimeTableViz(BaseViz):
 
 class PivotGridViz(BaseViz):
 
-    """A pivot grid view, define your rows, columns and metrics"""
+    """A pivot grid view, define your rows, columns and metrics
+    React Pivot Grid.
+    """
 
     viz_type = 'pivot_grid'
     verbose_name = _('Pivot Grid')
@@ -705,18 +707,23 @@ class PivotGridViz(BaseViz):
 
 class PivotTableViz(BaseViz):
 
-    """A pivot table view, define your rows, columns and metrics"""
+    """A pivot table view, define your rows, columns and metrics
+    Classic Pivot Table
+    """
 
     viz_type = 'pivot_table'
     verbose_name = _('Pivot Table')
     credits = 'a <a href="https://github.com/airbnb/superset">Superset</a> original'
     is_timeseries = False
 
+    order_by_values = ("rows_asc", "rows_desc", "values_asc", "values_desc")  # check with Form data as defined in controls.jsx
+
     def query_obj(self):
         d = super(PivotTableViz, self).query_obj()
         groupby = self.form_data.get('groupby')
         columns = self.form_data.get('columns')
         metrics = self.form_data.get('metrics')
+
         if not columns:
             columns = []
         if not groupby:
@@ -732,6 +739,10 @@ class PivotTableViz(BaseViz):
         return d
 
     def get_data(self, df):
+        order_by = self.form_data.get('pivot_sort_order')
+        if not order_by:
+            order_by = "rows_asc"
+
         if (
                 self.form_data.get('granularity') == 'all' and
                 DTTM_ALIAS in df):
@@ -753,6 +764,16 @@ class PivotTableViz(BaseViz):
         if dark_mode:
             classes = ('dataframe table table-striped table-bordered '
                        'table-condensed table-hover table-responsive table-dark')
+
+        if order_by == 'rows_asc':
+            df = df.sort_index(ascending=True)
+        if order_by == 'rows_desc':
+            df = df.sort_index(ascending=False)
+        if order_by == 'values_asc':
+            df = df.sort_values(by=df.columns[-1], ascending=True)
+        if order_by == 'values_desc':
+            df = df.sort_values(by=df.columns[-1], ascending=False)
+
         return dict(
             columns=list(df.columns),
             html=df.to_html(

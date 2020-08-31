@@ -1,3 +1,5 @@
+#!/bin/sh
+
 gunicorn \
       -w 2 \
       -k gevent \

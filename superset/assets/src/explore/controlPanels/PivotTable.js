@@ -19,7 +19,7 @@ export default {
         ['pandas_aggfunc', 'pivot_margins'],
         ['number_format', 'combine_metric'],
         ['number_alignment', 'include_search'],
-        ['pivot_margins_name', null]
+        ['pivot_margins_name', 'pivot_sort_order']
       ],
     },
   ],

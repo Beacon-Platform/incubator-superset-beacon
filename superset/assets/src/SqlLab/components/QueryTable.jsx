@@ -199,6 +199,7 @@ class QueryTable extends React.PureComponent {
           className="table table-condensed"
           data={data}
           itemsPerPage={50}
+          sortable={true}
         />
       </div>
     );

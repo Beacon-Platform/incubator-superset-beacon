@@ -26,6 +26,7 @@ const propTypes = {
   numGroups: PropTypes.number,
   verboseMap: PropTypes.objectOf(PropTypes.string),
   numberAlignment: PropTypes.string,
+  pivotSortOrder: PropTypes.string,
 };
 
 function PivotTable(element, props) {
@@ -38,6 +39,7 @@ function PivotTable(element, props) {
     verboseMap,
     numberAlignment,
     includeSearch,
+    pivotSortOrder,
   } = props;
 
   const { html, columns } = data;
@@ -50,6 +52,7 @@ function PivotTable(element, props) {
   const formatNum = numberFormat || table_format();
   const alignment = numberAlignment || 'Right';
   const align_map = {'Right': 'text-right', 'Left': 'text-left', 'Center': 'text-center'};
+  const sort_order = pivotSortOrder;
 
   const cols = Array.isArray(columns[0])
     ? columns.map(col => col[0])
@@ -96,7 +99,24 @@ function PivotTable(element, props) {
       scrollCollapse: true,
       scrollX: true,
     });
-    table.column('-1').order('desc').draw();
+
+    // sort table
+    if (sort_order.startsWith('rows')) {
+        if (sort_order.includes('asc')) {
+            table.column('0').order('asc').draw();
+        }
+        else {
+            table.column('0').order('desc').draw();
+        }
+    }
+    else {
+        if (sort_order.includes('asc')) {
+            table.column('-1').order('asc').draw();
+        }
+        else {
+            table.column('-1').order('desc').draw();
+        }
+    }
     fixDataTableBodyHeight($container.find('.dataTables_wrapper'), height);
   } else {
     // When there is more than 1 group by column we just render the table, without using
