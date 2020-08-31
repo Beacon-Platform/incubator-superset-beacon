@@ -5157,10 +5157,10 @@ domhandler@^2.3.0:
   dependencies:
     domelementtype "1"
 
-dompurify@^1.0.3:
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-1.0.9.tgz#9d5623df2ec670853e37ff11a5e19bc8990b3b22"
-  integrity sha512-lt9f3A3RO1OCNaWdA+s/k7YVn0Typ5MbAKmX94PLCZbs8wLNccX3Bj4xXA7GLKOoDb/MeVoAoeIJarZD1JUnjg==
+dompurify@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-2.0.3.tgz#5cc4965a487d54aedba6ba9634b137cfbd7eb50d"
+  integrity sha512-q006uOkD2JGSJgF0qBt7rVhUvUPBWCxpGayALmHvXx2iNlMfNVz7PDGeXEUjNGgIDjADz59VZCv6UE3U8XRWVw==
 
 domutils@1.5.1:
   version "1.5.1"
@@ -12975,10 +12975,10 @@ react-overlays@^0.7.4:
     prop-types-extra "^1.0.1"
     warning "^3.0.0"
 
-react-pivottable@^0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/react-pivottable/-/react-pivottable-0.9.0.tgz#f50ea2334dbbdd1c078f5a402f7c33b7c6dff907"
-  integrity sha512-fs1pGV5z4BvOXL4iLu79kKCLgR5XINW2ZredJHoPqXEMbJaIv50Eoec1XowWf3i3Dvdb8EYgvNqlF2ggC4GJOw==
+react-pivottable@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/react-pivottable/-/react-pivottable-0.10.0.tgz#1a92b0b20fccfb81e01502881c13151843a80ae9"
+  integrity sha512-d2w0YVcR4rrwcrx1Oyei9x3LNR3/9/uLA3gMGHvD/CrozvOp3FtXdOB3mK+d63bd2vEoj4aUu/iNaKVf2eOPoA==
   dependencies:
     immutability-helper "^2.3.1"
     prop-types "^15.5.10"
@@ -13100,6 +13100,11 @@ react-syntax-highlighter@^7.0.4:
     prismjs "^1.8.4"
     refractor "^2.4.1"
 
+react-table@7.5.0:
+  version "7.5.0"
+  resolved "https://registry.yarnpkg.com/react-table/-/react-table-7.5.0.tgz#87326d92cdffbbf970f49b395bcafc3f84989ddf"
+  integrity sha512-hLsbNqLJkkYiATVteM8mthP8y5vnLPB2qdi9FeGZjsvb2m5vxj6cavIgk35oulvBmYD6Kox0HFfI332HPZpC7w==
+
 react-test-renderer@^15.6.2:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-15.6.2.tgz#d0333434fc2c438092696ca770da5ed48037efa8"
@@ -13191,10 +13196,10 @@ react@^16.4.1, react@^16.6.3:
     prop-types "^15.6.2"
     scheduler "^0.12.0"
 
-reactable-arc@0.14.42:
-  version "0.14.42"
-  resolved "https://registry.yarnpkg.com/reactable-arc/-/reactable-arc-0.14.42.tgz#a7864e331fe3b80d9d6237392d5275a17e79bb1e"
-  integrity sha512-dYWTX+JdknG/DgQlqbjf4ZIJj2z6blEfl7gqTNsLD66gcM+YrgRsTbl4S0E71/iPzfgGujxyk3TLilbozx9c9Q==
+reactable-arc@0.15.0:
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/reactable-arc/-/reactable-arc-0.15.0.tgz#b9e145f58c787227bced894cd9c1611b37c20f3c"
+  integrity sha512-XH1mryI/xvbYb3lCVOU3rx/KRacDE0PDa45KazL/PPTM0AgPZ/awVmCAxRi179BpjbStk7cgCyFjI2oYJ28E8A==
 
 reactcss@^1.2.0:
   version "1.2.3"
