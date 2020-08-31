@@ -9182,20 +9182,10 @@ jquery-ui@1.12.1:
   resolved "https://registry.yarnpkg.com/jquery-ui/-/jquery-ui-1.12.1.tgz#bcb4045c8dd0539c134bc1488cdd3e768a7a9e51"
   integrity sha1-vLQEXI3QU5wTS8FIjN0+dop6nlE=
 
-jquery@3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.1.1.tgz#347c1c21c7e004115e0a4da32cece041fad3c8a3"
-  integrity sha1-NHwcIcfgBBFeCk2jLOzgQfrTyKM=
-
-jquery@>=1.7:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
-  integrity sha512-Ubldcmxp5np52/ENotGxlLe6aGMvmF4R8S6tZjsP6Knsaxd/xp3Zrh50cG93lR6nPXyUFwzN3ZSOQI0wRJNdGg==
-
-jquery@>=1.9.0:
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.4.1.tgz#714f1f8d9dde4bdfa55764ba37ef214630d80ef2"
-  integrity sha512-36+AdBzCL+y6qjw5Tx7HgzeGCzC81MDDgaUP8ld2zhx58HdqXGoBd+tHdrBMiyjGQs0Hxs/MLZTu/eHNJJuWPw==
+jquery@3.5.0, jquery@>=1.7, jquery@>=1.9.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.5.0.tgz#9980b97d9e4194611c36530e7dc46a58d7340fc9"
+  integrity sha512-Xb7SVYMvygPxbFMpTFQiHh1J7HClEaThguL15N/Gg37Lri/qKyhRGZYzHRyLH8Stq3Aow0LsHO2O2ci86fCrNQ==
 
 js-search@^1.3.1:
   version "1.4.2"
@@ -12975,10 +12965,10 @@ react-overlays@^0.7.4:
     prop-types-extra "^1.0.1"
     warning "^3.0.0"
 
-react-pivottable@^0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/react-pivottable/-/react-pivottable-0.9.0.tgz#f50ea2334dbbdd1c078f5a402f7c33b7c6dff907"
-  integrity sha512-fs1pGV5z4BvOXL4iLu79kKCLgR5XINW2ZredJHoPqXEMbJaIv50Eoec1XowWf3i3Dvdb8EYgvNqlF2ggC4GJOw==
+react-pivottable@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/react-pivottable/-/react-pivottable-0.10.0.tgz#1a92b0b20fccfb81e01502881c13151843a80ae9"
+  integrity sha512-d2w0YVcR4rrwcrx1Oyei9x3LNR3/9/uLA3gMGHvD/CrozvOp3FtXdOB3mK+d63bd2vEoj4aUu/iNaKVf2eOPoA==
   dependencies:
     immutability-helper "^2.3.1"
     prop-types "^15.5.10"
@@ -13100,6 +13090,11 @@ react-syntax-highlighter@^7.0.4:
     prismjs "^1.8.4"
     refractor "^2.4.1"
 
+react-table@7.5.0:
+  version "7.5.0"
+  resolved "https://registry.yarnpkg.com/react-table/-/react-table-7.5.0.tgz#87326d92cdffbbf970f49b395bcafc3f84989ddf"
+  integrity sha512-hLsbNqLJkkYiATVteM8mthP8y5vnLPB2qdi9FeGZjsvb2m5vxj6cavIgk35oulvBmYD6Kox0HFfI332HPZpC7w==
+
 react-test-renderer@^15.6.2:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-15.6.2.tgz#d0333434fc2c438092696ca770da5ed48037efa8"
@@ -13191,10 +13186,10 @@ react@^16.4.1, react@^16.6.3:
     prop-types "^15.6.2"
     scheduler "^0.12.0"
 
-reactable-arc@0.14.42:
-  version "0.14.42"
-  resolved "https://registry.yarnpkg.com/reactable-arc/-/reactable-arc-0.14.42.tgz#a7864e331fe3b80d9d6237392d5275a17e79bb1e"
-  integrity sha512-dYWTX+JdknG/DgQlqbjf4ZIJj2z6blEfl7gqTNsLD66gcM+YrgRsTbl4S0E71/iPzfgGujxyk3TLilbozx9c9Q==
+reactable-arc@0.15.0:
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/reactable-arc/-/reactable-arc-0.15.0.tgz#b9e145f58c787227bced894cd9c1611b37c20f3c"
+  integrity sha512-XH1mryI/xvbYb3lCVOU3rx/KRacDE0PDa45KazL/PPTM0AgPZ/awVmCAxRi179BpjbStk7cgCyFjI2oYJ28E8A==
 
 reactcss@^1.2.0:
   version "1.2.3"
