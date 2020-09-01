@@ -2,7 +2,9 @@ import { t } from '@superset-ui/translation';
 import { pivot_grid_controls } from '../../utils.js';
 
 const pivot_interact = pivot_grid_controls() ? 'pivot_interact' : null;
-window.console.log('pivot_grid_controls ', pivot_grid_controls(), pivot_interact);
+if (window._debug_) {
+    window.console.log('pivot_grid_controls ', pivot_grid_controls(), pivot_interact);
+}
 
 export default {
   controlPanelSections: [

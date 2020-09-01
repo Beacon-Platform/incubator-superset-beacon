@@ -75,19 +75,32 @@ export default function transformProps(chartProps) {
     }))
     : rawData;
 
-  // Temporary fix to convert BigNumber to plain number
+  // Fix - convert BigNumber to plain number
   if (Array.isArray(data)) {
       for (var row of data) {
         for (var i in row.values) {
             var val = row.values[i];
-            for (var v in val) {
-                if (Array.isArray(val[v])) {
-                    var m = val[v];
-                    val[v] = m.map(r => isBigNumber(r) ? r.toNumber() : r);
+            if (Array.isArray(val)) {
+                for (var v in val) {
+                    if (Array.isArray(val[v])) {
+                        var m = val[v];
+                        val[v] = m.map(r => isBigNumber(r) ? r.toNumber() : r);
+                    }
+                    else {
+                        var r = val[v];
+                        val[v] = isBigNumber(r) ? r.toNumber() : r;
+                    }
+                }
+            }
+            else {
+                if (typeof(val) === 'object') {
+                    for (var v in val) {
+                        var r = val[v];
+                        val[v] = isBigNumber(r) ? r.toNumber() : r;
+                    }
                 }
                 else {
-                    var r = val[v];
-                    val[v] = isBigNumber(r) ? r.toNumber() : r;
+                    val = isBigNumber(val) ? val.toNumber() : val;
                 }
             }
         }
