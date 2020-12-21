@@ -1751,7 +1751,7 @@ class Superset(BaseSupersetView):
                 db_engine.patch()
 
                 masked_url = database.get_password_masked_url_from_uri(uri)
-                logging.info('Superset.testconn(). Masked URL: {0}'.format(masked_url))
+                logging.info('Superset.testconn(): Masked URL: %s', masked_url)
 
                 configuration.update(
                     db_engine.get_configuration_for_impersonation(uri,
@@ -1768,7 +1768,7 @@ class Superset(BaseSupersetView):
             if configuration:
                 connect_args['configuration'] = configuration
 
-            logging.debug("Superset.testconn(). Connecting to: {0}, db name: {1}: engine params: {2}".format(uri, db_name, engine_params))
+            logging.debug("Superset.testconn(): Connecting to: %s, db name: %s, engine params: %s, backend: %s", uri, db_name, engine_params, url.get_backend_name())
             engine = create_engine(uri, **engine_params)
             engine.connect()
             return json_success(json.dumps(engine.table_names(), indent=4))

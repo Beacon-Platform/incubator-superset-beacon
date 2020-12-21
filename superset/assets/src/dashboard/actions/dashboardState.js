@@ -47,6 +47,7 @@ export function removeSlice(sliceId) {
   return { type: REMOVE_SLICE, sliceId };
 }
 
+const URL_PREFIX = '';
 const FAVESTAR_BASE_URL = '/superset/favstar/Dashboard';
 export const TOGGLE_FAVE_STAR = 'TOGGLE_FAVE_STAR';
 export function toggleFaveStar(isStarred) {
@@ -57,7 +58,7 @@ export const FETCH_FAVE_STAR = 'FETCH_FAVE_STAR';
 export function fetchFaveStar(id) {
   return function fetchFaveStarThunk(dispatch) {
     return SupersetClient.get({
-      endpoint: `${FAVESTAR_BASE_URL}/${id}/count`,
+      endpoint: `${URL_PREFIX}${FAVESTAR_BASE_URL}/${id}/count`,
     })
       .then(({ json }) => {
         if (json.count > 0) dispatch(toggleFaveStar(true));

@@ -475,6 +475,30 @@ export const controls = {
     description: t('Sort pivot tables methods. Rows ascending is a default.'),
   },
 
+  pivot_first_column_width: {
+    type: 'TextControl',
+    label: t('First column width'),
+    renderTrigger: false,
+    default: '',
+    description: t('Set width of the first column for the Pivot table (in px or %)'),
+  },
+
+  pivot_columns_width: {
+    type: 'TextControl',
+    label: t('Columns width'),
+    renderTrigger: false,
+    default: '',
+    description: t('Set width of all column for the Pivot table (in px or %)'),
+  },
+
+  pivot_horizontal_margins: {
+    type: 'CheckboxControl',
+    label: t('Hide horizonal totals'),
+    renderTrigger: false,
+    default: false,
+    description: t('Display on/off total for row'),
+  },
+
   dark_mode: {
     type: 'CheckboxControl',
     label: t('Table Dark Mode style'),

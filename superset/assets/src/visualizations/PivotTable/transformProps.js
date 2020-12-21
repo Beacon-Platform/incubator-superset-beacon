@@ -6,6 +6,8 @@ export default function transformProps(chartProps) {
     numberAlignment,
     includeSearch,
     pivotSortOrder,
+    pivotFirstColumnWidth,
+    pivotColumnsWidth,
   } = formData;
   const {
     columnFormats,
@@ -28,5 +30,7 @@ export default function transformProps(chartProps) {
     numberAlignment,
     includeSearch,
     pivotSortOrder,
+    pivotFirstColumnWidth,
+    pivotColumnsWidth,
   };
 }

@@ -27,6 +27,8 @@ const propTypes = {
   verboseMap: PropTypes.objectOf(PropTypes.string),
   numberAlignment: PropTypes.string,
   pivotSortOrder: PropTypes.string,
+  pivotFirstColumnWidth: PropTypes.string,
+  pivotColumnsWidth: PropTypes.string,
 };
 
 function PivotTable(element, props) {
@@ -40,6 +42,8 @@ function PivotTable(element, props) {
     numberAlignment,
     includeSearch,
     pivotSortOrder,
+    pivotFirstColumnWidth,
+    pivotColumnsWidth,
   } = props;
 
   const { html, columns } = data;
@@ -53,6 +57,10 @@ function PivotTable(element, props) {
   const alignment = numberAlignment || 'Right';
   const align_map = {'Right': 'text-right', 'Left': 'text-left', 'Center': 'text-center'};
   const sort_order = pivotSortOrder;
+
+  var zero_col_width = pivotFirstColumnWidth;
+  var columns_width = pivotColumnsWidth;
+  var visible_horizontal_sum = false;
 
   const cols = Array.isArray(columns[0])
     ? columns.map(col => col[0])
@@ -85,6 +93,23 @@ function PivotTable(element, props) {
     });
   });
 
+  var columns_def = [];
+  if (zero_col_width !== '') {
+    if (!zero_col_width.endsWith("px") || !zero_col_width.endsWith("%")) {
+        zero_col_width += "px";
+    }
+    columns_def.push({"width": zero_col_width, "targets": 0});
+  }
+
+  if (columns_width !== '') {
+    if (!columns_width.endsWith("px") || !columns_width.endsWith("%")) {
+        columns_width += "px";
+    }
+    columns_def.push({"width": columns_width, "targets": "_all"});
+  }
+
+  //window.console.log("Columns Defs: ", columns_def);
+
   if (numGroups === 1) {
     // When there is only 1 group by column,
     // we use the DataTable plugin to make the header fixed.
@@ -92,6 +117,7 @@ function PivotTable(element, props) {
     // overflow: 'auto' on the table.
     container.style.overflow = 'hidden';
     const table = $container.find('table').DataTable({
+      columnDefs: columns_def,
       paging: false,
       searching: includeSearch,
       bInfo: false,
@@ -99,6 +125,9 @@ function PivotTable(element, props) {
       scrollCollapse: true,
       scrollX: true,
     });
+
+    // table first column fixed width
+    //window.console.log('Table: ', table, height);
 
     // sort table
     if (sort_order.startsWith('rows')) {

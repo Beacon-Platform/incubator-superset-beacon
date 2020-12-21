@@ -525,7 +525,8 @@ class SqlaTable(Model, BaseDatasource):
 
     def get_sqla_query(  # sqla
             self,
-            groupby, metrics,
+            groupby,
+            metrics,
             granularity,
             from_dttm, to_dttm,
             filter=None,  # noqa
@@ -555,6 +556,8 @@ class SqlaTable(Model, BaseDatasource):
         template_kwargs.update(self.template_params_dict)
         template_processor = self.get_template_processor(**template_kwargs)
         db_engine_spec = self.database.db_engine_spec
+
+        logging.debug("Get sqla query from %s", db_engine_spec)
 
         orderby = orderby or []
 
