@@ -1768,7 +1768,7 @@ class Superset(BaseSupersetView):
             if configuration:
                 connect_args['configuration'] = configuration
 
-            logging.debug("Superset.testconn(): Connecting to: %s, db name: %s, engine params: %s, backend: %s", uri, db_name, engine_params, url.get_backend_name())
+            logging.debug("Superset.testconn(): Connecting to: %s, db name: %s, engine params: %s, backend: %s", uri, db_name, engine_params, url and url.get_backend_name() or "")
             engine = create_engine(uri, **engine_params)
             engine.connect()
             return json_success(json.dumps(engine.table_names(), indent=4))
