@@ -368,6 +368,9 @@ HTTP_HEADERS = {'X-Frame-Options': 'SAMEORIGIN'}
 # The db id here results in selecting this one as a default in SQL Lab
 DEFAULT_DB_ID = None
 
+# Custom DB configuration file
+CUSTOM_DB_CONFIG_ENABLED = True
+
 # Timeout duration for SQL Lab synchronous queries
 SQLLAB_TIMEOUT = 60
 

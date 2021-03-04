@@ -355,6 +355,8 @@ class CsvToDatabaseView(SimpleFormView):
         form.csv_file.data.filename = secure_filename(form.csv_file.data.filename)
         csv_filename = form.csv_file.data.filename
         path = os.path.join(config['UPLOAD_FOLDER'], csv_filename)
+        logging.info("Upload Folder: %s, csv_file: %s", config['UPLOAD_FOLDER'], csv_filename)
+        stats_logger.incr("Saving csv file to %s" % path)
         try:
             utils.ensure_path_exists(config['UPLOAD_FOLDER'])
             csv_file.save(path)
@@ -365,7 +367,8 @@ class CsvToDatabaseView(SimpleFormView):
         except Exception as e:
             try:
                 os.remove(path)
-            except OSError:
+            except OSError as e:
+                logging.info("Failed to remove csv file: %s, error: %s", path, str(e))
                 pass
             message = 'Table name {} already exists. Please pick another'.format(
                 form.name.data) if isinstance(e, IntegrityError) else str(e)

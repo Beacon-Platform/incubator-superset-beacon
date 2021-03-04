@@ -656,8 +656,8 @@ class Database(Model, AuditMixinNullable, ImportMixin):
     perm = Column(String(1000))
     impersonate_user = Column(Boolean, default=False)
     export_fields = ('database_name', 'sqlalchemy_uri', 'cache_timeout',
-                     'expose_in_sqllab', 'allow_run_async',
-                     'allow_ctas', 'allow_csv_upload', 'extra')
+                     'expose_in_sqllab', 'allow_run_async', 'allow_dml',
+                     'allow_ctas', 'allow_csv_upload', 'extra', 'force_ctas_schema', 'password')
     export_children = ['tables']
 
     def __repr__(self):

@@ -19,6 +19,8 @@ from superset.security import SupersetSecurityManager
 from superset.utils.core import (
     get_update_perms_flag, pessimistic_connection_handling, setup_cache)
 
+from superset.add_db import add_databases_from_config
+
 APP_DIR = os.path.dirname(__file__)
 CONFIG_MODULE = os.environ.get('SUPERSET_CONFIG', 'superset.config')
 
@@ -209,9 +211,11 @@ if app.config.get('REMOTE_USER_ENV', False):
                                  guest_domains=app.config.get('GUEST_DOMAINS', None))
 
 if app.config.get('UPLOAD_FOLDER'):
+    logging.info("Creating Upload folder: %s", app.config.get('UPLOAD_FOLDER'))
     try:
         os.makedirs(app.config.get('UPLOAD_FOLDER'))
-    except OSError:
+    except OSError as e:
+        logging.warning("Failed to create upload folder: %s, reason: %s", app.config.get('UPLOAD_FOLDER'), str(e))
         pass
 
 for middleware in app.config.get('ADDITIONAL_MIDDLEWARE'):
@@ -258,5 +262,9 @@ if conf.get('ENABLE_FLASK_COMPRESS'):
 flask_app_mutator = app.config.get('FLASK_APP_MUTATOR')
 if flask_app_mutator:
     flask_app_mutator(app)
+
+# Add custom DB configs
+if conf.get('CUSTOM_DB_CONFIG_ENABLED', False):
+    add_databases_from_config(app.config.get('DATA_DIR'), app.config.get('CUSTOM_DB_CONFIG_ENABLED', False), db)
 
 from superset import views  # noqa

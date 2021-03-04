@@ -49,12 +49,13 @@ def export_to_dict(session,
 
 def import_from_dict(session, data, sync=[]):
     """Imports databases and druid clusters from dictionary"""
+    databases = []
     if isinstance(data, dict):
         logging.info('Importing %d %s',
                      len(data.get(DATABASES_KEY, [])),
                      DATABASES_KEY)
         for database in data.get(DATABASES_KEY, []):
-            Database.import_from_dict(session, database, sync=sync)
+            databases.append(Database.import_from_dict(session, database, sync=sync))
 
         logging.info('Importing %d %s',
                      len(data.get(DRUID_CLUSTERS_KEY, [])),
@@ -64,3 +65,5 @@ def import_from_dict(session, data, sync=[]):
         session.commit()
     else:
         logging.info('Supplied object is not a dictionary.')
+
+    return databases
