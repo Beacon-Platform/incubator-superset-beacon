@@ -76,7 +76,7 @@ pyodbc==4.0.30
 psycopg2==2.8.5
 requests>=2.20.0
 rfc3986==1.1.0            # via tableschema
-redis==3.2.1
+redis==4.4.4
 s3transfer==0.1.13        # via boto3
 #sasl==0.2.1               # via thrift-sasl
 simplejson==3.15.0
