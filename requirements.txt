@@ -88,7 +88,7 @@ tableschema==1.5.0
 #tabulator==1.15.0         # via tableschema
 #thrift-sasl==0.3.0
 thrift==0.11.0
-tornado==5.1.1            # via flower
+tornado==6.3.3            # via flower
 unicodecsv==0.14.1
 unidecode==1.0.22
 urllib3>=1.24.2            # via requests
